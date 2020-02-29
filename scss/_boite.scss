@@ -1,0 +1,273 @@
+// --------- Section nouveaux biscuits ---------
+
+#nouveauxBiscuits {
+  margin-bottom: 20px;
+  > h2 {
+    font-family: $fontSecondary;
+    color: $colorPrimary;
+    text-transform: uppercase;
+    text-align: center;
+    @media (min-width: 992px) {
+    background: url('../media/double-ligne-noire.png') left 70px top 50% no-repeat,
+                url('../media/double-ligne-noire.png') right 70px top 50% no-repeat;
+    }
+    margin: 20px 0 0;
+    // Depuis l'extérieur
+  }
+}
+
+.boiteNouveauBiscuit {
+  text-align: center;
+  a {
+    display: block;
+    height: 330px;
+    border: 1px solid transparent;
+    padding: 10px 4px;
+    transition: all .3s;
+    &:hover {
+      border: 1px solid $colorTertiary;
+    }
+    figcaption {
+      border-top: 1px solid $colorPrimary;
+      margin: 10px 0;
+      h3 {
+        font-family: $fontSecondary;
+        color: $colorPrimary;
+        padding: 10px 0;
+      }
+      mark {
+        background: $colorPrimary;
+        color: $colorLight;
+        padding: 5px 10px;
+      }
+      p {
+        font-size: .9em;
+      }
+    }
+  }
+}
+
+// --------- Section présentation de l'entreprise ---------
+
+.boiteEntreprise {
+  a {
+    color: $colorLight;
+    img {
+      filter: contrast(1);
+      transition: all .3s;
+      &:hover {
+          filter: contrast(120%);
+      }
+    }
+    figcaption {
+      div {
+        position: relative;
+        z-index: 1;
+        // La propriété "z-index" est utilisée pour reconstruire un design qui doit passer par devant à la seule condition que la position soit en "relative"
+        margin: -40px auto 0 auto;
+        width: 62px;
+        height: 62px;
+        background: url('../media/pastille.png');
+        font-family: $fontSecondary;
+        line-height: 62px;
+        text-align: center;
+        // Pour centrer le div au centre de la boîte
+      }
+      h3 {
+        font-family: $fontSecondary;
+        height: 36px;
+      }
+      p {
+        padding: .5em 0;
+      }
+    }
+    &:hover {
+      color: $colorLight;
+    }
+  }
+}
+
+// --------- Section catalogue des biscuits ---------
+
+.boiteCatalogue {
+//border: 1px solid grey;
+  text-align: center;
+  color: $colorLight;
+  align-self: end;
+  // alignement dans le grid système vers le bas (verticalement)
+  justify-self: center;
+  figcaption {
+    display: flex;
+    flex-direction: column;
+//  OU flex-flow: column;
+//  => raccourci de flex-direction (on peut y ajouter "wrap")
+//  => en rajoutant wrap ça permeet de ne pas faire dépasser le contenu de la boîte et donc revient automatiquement à la ligne
+    justify-content: center;
+    // alignement dans le grid système horizontalement
+    position: relative;
+    // Relatif au flux, donc il permet de passer devant!!
+    margin-top: -40px;
+    h4 {
+      font-family: $fontSecondary;
+    }
+    p {
+      padding-top: .3em;
+    }
+  }
+  &:hover {
+    color: $colorLight;
+  }
+}
+
+.boiteCatalogueSm {
+  @extend .boiteCatalogue;
+  // on reprend tout le code de la '.boîteCatalogue' et on l'étend avec de nouvelles propriétés
+  figcaption {
+    background: url("../media/etiquette-cookie.png") bottom no-repeat;
+    width: 140px;
+    height: 50px;
+    // Les deux propriétés rétablissent le 'background' à ses dimensions
+    &:hover {
+        background: url("../media/etiquette-cookie-2.png") bottom no-repeat;
+    }
+  }
+}
+
+.boiteCatalogueXl {
+  @extend .boiteCatalogue;
+  figcaption {
+    width: 300px;
+    height: 50px;
+    background: url("../media/etiquette-cookie-xl.png") bottom no-repeat;
+    &:hover {
+      background: url("../media/etiquette-cookie-xl-2.png") bottom no-repeat;
+    }
+  }
+}
+
+.boiteEtiquetteAvantages {
+  display: block;
+/*  align-items: center;
+    // axe secondaire
+    flex-direction: column;
+    justify-content: center;
+    // axe principal
+*/
+  width: 146px;
+  height: 349px;
+  background: url("../media/etiquette.png") center no-repeat;
+  figure {
+    position: relative;
+    padding: 70px 5px 40px 5px;
+    height: 100%;
+//  border: 1px solid grey;
+  }
+  h4 {
+    font-family: $fontSecondary;
+    color: $colorSecondary;
+    text-transform: uppercase;
+  }
+  img, figcaption {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+//  Va décaler l'axe des x vers la gauche
+  }
+  img {
+    bottom: 110px;
+  }
+  figcaption {
+    color: $colorPrimary;
+    text-decoration: underline;
+    bottom: 40px;
+  }
+  &:hover {
+    width: 146px;
+    height: 349px;
+    background: url("../media/etiquette-2.png") center no-repeat;
+    transition: all .3s;
+    h4 {
+      color: $colorTertiary;
+      transition: all .3s;
+    }
+    figcaption {
+      color: $colorTertiary;
+      transition: all .3s;
+    }
+  }
+}
+
+/*---------------------
+Boîtes Réseaux sociaux
+---------------------*/
+.boiteReseauSocial {
+  display: flex;
+  align-items: center;
+  min-width: 250px;
+  color: $colorLight;
+  font-family: $fontSecondary;
+  h5 {
+    margin-left: 10px;
+  }
+  &:hover {
+    color: $colorLight;
+    background: $colorTertiary !important;
+  }
+}
+
+  #boiteFacebook {
+    background: $colorFacebook;
+  }
+  #boiteTwitter {
+    background: $colorTwitter;
+  }
+// Pour que la gestion de la couleur fonctionne (display flex)
+
+
+/*
+figure en position relative pour positionner ce qu'il y a dans figure pour l'image et le figcaption (qui sont en position absolute)
+Déclarer top, left, right, bottom pour faire le positionnement
+Pour qu'elles se mettent automatiquement sans rien modifier:
+Partir d'un left: -50% et l'axe horizontal on ne met à -50%
+Bottom pour l'image et le figcaption
+*/
+
+/*
+---------------------
+ALIGNEMENT VERTICAL:
+---------------------
+
+- Pas de "padding-top"
+- On ne peut pas utiliser line-height pour aligner verticalement
+car quand on a un 'h' et un 'p' cela veut dire que lorsqu'on a deux lignes, ça ne marchera pas
+
+   display: table-cell;
+   vertical-align: middle;
+// agit sur le contenu pas sur le background
+// Ne fonctionne uniquement qu'avec ces deux propriétés ensemble (compatible mais pas très moderne)
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+// Version moderne pour l'alignement vertical
+// Quand on fait un display flex, il y a un axe principal (hori) et un axe secondaire (vertical)
+   justify-content: center modifie l'axe principal horizontalement
+   Si on justifie le flex-direction en column, l'alignement de ce qui est en flex deviendra vertical
+
+---------------------
+LES ALIGNEMENTS
+---------------------
+align-items:
+Mettre dans la balise qui contient .grid et appliquer un 'center' pour les aligner en dessous au centre
+Se déclare sur le parent principal pour dire "aligne tes enfants directs"
+
+align-self:
+A partir de la balise il va s'aligner lui-même + chaque élément de .grid
+équivalent de align-items pour aligner chaque enfant un par un
+
+justify-self:
+Identique mais pour aligner horizontalement
+
+quand on utilise self, ça concerne toujours les enfants directs de grid
+Quand on utilise autre chose c'est pour les parents
+*/

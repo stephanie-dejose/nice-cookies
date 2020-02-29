@@ -1,0 +1,38 @@
+.triangle {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-left: 50px solid transparent;
+  margin: 0 auto;
+}
+
+.triangle-light {
+  @extend .triangle;
+  // permet d'étendre une propriété qui a déjà été déclarée (include + add combinés)
+  border-top: 50px solid $colorLight;
+}
+
+.triangle-primary {
+  @extend .triangle;
+  border-top: 50px solid $colorPrimary;
+}
+
+.rectangle {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+}
+
+.rectangle-light {
+  @extend .rectangle;
+  background: $colorFacebook;
+
+}
+
+.rectangle-dark {
+  @extend .rectangle;
+  background: $colorTwitter;
+}

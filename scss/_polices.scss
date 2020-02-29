@@ -1,0 +1,24 @@
+@font-face  {
+  font-family: "Overlock";
+  src: url("../polices/overlock.woff2") format("woff2"),
+       url("../polices/overlock.woff") format("woff");
+  font-weight: normal;
+// Pour qu'il n'y ai pas de variante de la police (changement du gras,...)
+  font-style: normal;
+}
+
+@font-face  {
+  font-family: "Fredoka";
+  src: url("../polices/fredoka.woff2") format("woff2"),
+       url("../polices/fredoka.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face  {
+  font-family: "Cookie";
+  src: url("../polices/cookie.woff2") format("woff2"),
+       url("../polices/cookie.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

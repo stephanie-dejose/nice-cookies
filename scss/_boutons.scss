@@ -1,0 +1,15 @@
+.btn-arrow {
+  display: block;
+  width: 246px;
+  height: 47px;
+  background: url('../media/btn-fleche.png');
+  color: $colorLight;
+  font-family: $fontSecondary;
+  text-align: center;
+  line-height: 43px;
+    // définir la hauteur que va prendre la ligne de texte
+  &:hover {
+    color: $colorLight;
+    background: url('../media/btn-fleche-2.png');
+  }
+}

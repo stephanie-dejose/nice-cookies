@@ -1,0 +1,335 @@
+@import "polices";
+@import "variables";
+@import "grid";
+@import "boite";
+@import "boutons";
+@import "utilitaires";
+@import "formes";
+
+//--------- GENERAL ET DIVERS ---------
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontPrimary;
+  color: $colorDark;
+}
+
+a {
+  font-family: $fontPrimary;
+  color: $colorDark;
+  text-decoration: none;
+  &:hover {
+    color: $colorPrimary;
+  }
+}
+
+p {
+  padding: 1.2em 0 0;
+}
+
+// --------- Navigation connexion / panier ---------
+#navPanier {
+  text-align: right;
+  li, figure {
+    display: inline-block;
+  }
+}
+
+// --------- Fond du Header ---------
+.background-store-header {
+  background: url('../media/store-footer.png') center;
+  height: 900px;
+  @media (min-width: 768px) {
+    height: 520px;
+  }
+  @media (min-width: 992px) {
+    background: url('../media/store-3d.png') center repeat-x;
+    height: 634px;
+  }
+}
+// repeat-x = répète horizontalement l'image
+
+// --------- Header ---------
+#hero {
+  position: relative;
+  top: 20px;
+}
+// Correspond à la hauteur de l'image store-3d
+
+// --------- Logo hero ---------
+#logoHero {
+  position: absolute;
+  left: calc(50% - (206px/2));
+  top: 40px;
+  @media (min-width: 768px) {
+    top: -10px;
+  }
+}
+// 50% - la moitié du logo
+
+// ---------Navigation principale ---------
+#navPrincipale {
+  background: $colorLight;
+  text-transform: uppercase;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px $colorDark;
+//text-align: center;
+    ul {
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+      justify-content: space-between;
+//    Gére l'alignement
+//    Prend toutes les boites et ajuste l'espace entre les éléments pour les aligner automatiquement
+      align-items: center;
+      text-align: center;
+
+      li {
+        &:first-child {
+          margin-top: 120px;
+          @media (min-width: 768px) {
+            margin-top: 0;
+          }
+        }
+        @media (min-width: 768px) {
+          &:nth-child(4) {
+            margin-left: 204px;
+            // laisser place au logo
+          }
+        }
+        // display: inline-block;
+        a {
+          display: block;
+          font-family: $fontSecondary;
+          color: $colorSecondary;
+          padding: 10px;
+          line-height: 1.2em;
+          font-size: .9em;
+          @media (min-width: 992px) {
+            font-size: 1em;
+          }
+          &:hover {
+            color: $colorPrimary;
+          }
+        }
+      }
+    }
+  }
+
+// --------- Section slideshow ---------
+#slideshowHero {
+  @media (min-width: 992px) {
+    background: url('../media/planche.png') bottom center no-repeat;
+    height: 580px;
+  }
+//background-size: contain; pour le test d'ajuster le plateau mais il le rend trop petit, donc on ne l'utilisera pas ici
+  .slide {
+  //  border:1px solid grey;
+    position: relative;
+    @media (min-width: 768px) {
+      top: 40px;
+    }
+    @media (min-width: 992px) {
+      top: 60px;
+    }
+    > figure {
+      @media (min-width: 768px) {
+        top: 84px;
+        text-align: right;
+        max-width: 340px;
+      }
+      position: relative;
+      text-align: center;
+
+      img {
+        max-width: 300px;
+      }
+    }
+    article {
+      position: relative;
+      text-align: center;
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+      h2 {
+        font-family: $fontSecondary;
+        color: $colorPrimary;
+        text-transform: uppercase;
+        font-size: 3rem;
+        @media (min-width: 992px) {
+          font-size: 4rem;
+        }
+      }
+      h3 {
+        font-family: $fontTertiary;
+        color: $colorTertiary;
+        font-size: 2.5rem;
+        @media (min-width: 992px) {
+          font-size: 3rem;
+        }
+      }
+      p {
+        margin-bottom: 20px;
+        @media (min-width: 768px) {
+          margin-bottom: auto;
+        }
+      }
+      figure {
+        display: none;
+        @media (min-width: 768px) {
+          display: block;
+          position: relative;
+          top: 10px;
+          @media (min-width: 992px) {
+            top: 36px;
+          }
+        figcaption {
+            position: absolute;
+            top: 10px;
+            a {
+              display: inline-block;
+              background: $colorLight;
+              padding: 8px 14px;
+              color: $colorSecondary;
+              font-family: $fontSecondary;
+              text-align: center;
+              box-shadow: 1px 2px 3px $colorDark;
+              //          X   Y   dureté
+              border-radius: 4px;
+              &:hover {
+                background: $colorTertiary;
+                color: $colorLight;
+              }
+              &:last-child {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+      > a {
+        display: block;
+        margin: 0 auto;
+        @media (min-width: 768px) {
+          position: absolute;
+          top: 180px;
+          @media (min-width: 992px) {
+            top: 210px;
+          }
+          left: 180px;
+        }
+      }
+    }
+  }
+}
+
+// --------- Section présentation de l'entreprise ---------
+
+.background-color-primary {
+  background: $colorPrimary;
+}
+
+#entreprise {
+  text-align: center;
+  color: $colorLight;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  a {
+    color: $colorLight;
+  }
+  > h2 {
+    font-family: $fontSecondary;
+
+    span {
+        color: $colorTertiary;
+        text-transform: uppercase;
+    }
+  }
+}
+
+#catalogueAvantages {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+#catalogue {
+  > h3 {
+    font-family: $fontSecondary;
+    color: $colorPrimary;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+// --------- Section avantages de l'entreprise ---------
+
+#avantages {
+  margin-top: 40px;
+  @media (min-width: 992px) {
+    margin-top: 0;
+  }
+  > h3 {
+    color: $colorTertiary;
+    font-family: $fontTertiary;
+    font-size: 1.7em;
+    background: url('../media/double-ligne-jaune.png') left 20px top 50% no-repeat,
+                url('../media/double-ligne-jaune.png') right 20px top 50% no-repeat;
+  }
+  .grid {
+    justify-items: center;
+    // alignement des ul centrés horizontalement (rappel)
+    @media (min-width: 992px) {
+      justify-items: stretch;
+    }
+  }
+}
+
+// --------- Footer ---------
+.textureBois {
+  background: url('../media/texture-bois.png') repeat-x;
+  height: 30px;
+}
+
+.background-store-2d {
+  background: url('../media/store-footer.png') center repeat-x;
+  height: 293px;
+}
+
+// boîte adresse
+address {
+  background: $colorLight;
+  padding: 60px 1em 20px;
+  text-align: center;
+  box-shadow: 0px 4px 4px $colorDark;
+  p {
+    font-family: $fontSecondary;
+    text-transform: uppercase;
+    line-height: 3em;
+  }
+  li {
+    padding: 5px;
+    a {
+      padding-top: 50px; // ???? NE FONCTIONNE PAS ????
+      font-weight: bolder;
+      text-decoration: underline;
+    }
+  }
+}
+
+address, address a {
+  color: $colorSecondary;
+}
+
+#footer {
+  position: relative;
+}
+
+#logoFooter {
+  position: absolute;
+  top: -60px;
+  left: calc(50% - (206px/2));
+}

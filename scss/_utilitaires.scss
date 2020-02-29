@@ -1,0 +1,30 @@
+/*----------------
+    DISPLAY NONE
+----------------*/
+
+@media screen and (min-width: 0) {
+  .d-sm-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .d-md-none {
+    display: unset;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+/*----------------
+    IMAGES RESPONSIVES
+----------------*/
+
+.img-resp {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

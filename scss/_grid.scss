@@ -1,0 +1,139 @@
+/*----------------------------
+  ECRANS SMALLS
+----------------------------*/
+
+@media screen and (min-width: 0) {
+  .container {
+    width: 100%;
+    margin: 0;
+    padding: 0 1em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em 1em;
+    > * {
+      grid-column: span 4;
+      grid-row: span 1;
+    }
+  }
+
+  @for $i from 1 through 4 {
+    .col-sm-#{$i} {
+      grid-column: span + ' ' + $i;
+    }
+  }
+
+  @for $i from 1 through 4 {
+    .row-sm-#{$i} {
+      grid-row: span + ' ' + $i;
+    }
+  }
+}
+
+/*----------------------------
+  ECRANS MEDIUMS
+----------------------------*/
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 720px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1em 1em;
+    > * {
+      grid-column: span 12;
+      grid-row: span 1;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      grid-column: span + ' ' + $i;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .row-md-#{$i} {
+      grid-row: span + ' ' + $i;
+    }
+  }
+}
+
+/*----------------------------
+  ECRANS LARGES
+----------------------------*/
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1em 20px;
+    > * {
+      grid-column: span 12;
+      grid-row: span 1;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      grid-column: span + ' ' + $i;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .row-lg-#{$i} {
+      grid-row: span + ' ' + $i;
+    }
+  }
+}
+
+/*----------------------------
+  ECRANS EXTRA-LARGES
+----------------------------*/
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1140px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1em 1em;
+    > * {
+      grid-column: span 12;
+      grid-row: span 1;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .col-xl-#{$i} {
+      grid-column: span + ' ' + $i;
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .row-xl-#{$i} {
+      grid-row: span + ' ' + $i;
+    }
+  }
+}
+
+
+/* Permet de voir comment ça se passe visuellement en appliquant une bordure
+.grid > * {
+  border: 1px solid gray;
+}
+*/
